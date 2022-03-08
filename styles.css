@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  overflow: hidden;
+  margin: 0;
+
+  background-color: #2d4018;
+  height: 100vh;
+
+  /*! так контейнер станет посередине (важно! не элементы, а сам .container)*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+}
+
+/* .tulip {
+  background-image: url(images/tulip.jpg);
+}
+
+.carnation {
+  background-image: url(images/carnation.jpg);
+}
+
+.chrysanthemum {
+  background-image: url(images/chrysanthemum.jpg);
+}
+
+.rose {
+  background-image: url(images/rose.jpg);
+}
+
+.lily {
+  background-image: url(images/lily.jpg);
+} */
+
+.slide {
+  position: relative;
+  height: 80vh; /*! это 80 процентов от видимой части экрана */
+  border-radius: 20px;
+  margin: 10px;
+  cursor: pointer;
+  color: #402c05;
+  text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8);
+  flex: 1; /*! каждый элемент растянется на одинаковую ширину */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.slide h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+  font-size: 24px;
+  margin: 0; /*! убираем дефолтные отступы */
+
+  opacity: 0; /*! изначально заголовок не видно */
+}
+
+.slide.active {
+  flex: 10;
+}
+
+.slide.active h3 {
+  /*! т.е. когда slide имеет ещё и класс active, то применяем к заголовку следующие стили: */
+  opacity: 1;
+  transition: opacity 0.5s ease-in 0.4s; /*! поставили 0.4s delay, теперь видна анимация - постепенное проявление текста */
+}
